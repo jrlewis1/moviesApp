@@ -1,0 +1,36 @@
+﻿@page
+@model moviesApp.Pages.Movies.IndexModel
+@{
+}
+
+<br />
+<h1>List of Movies</h1>
+<a class="btn btn-primary btn-sm" href="/Movies/Create">New Movie</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Budget</th>
+            <th>Created</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listMovies)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.genre</td>
+                <td>@item.budget</td>
+                <td>@item.created_at</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Movies/Edit?id=">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Movies/Delete?id=">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
